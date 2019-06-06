@@ -1,0 +1,3 @@
+[submodule "namespacelibs"]
+	path = namespacelibs
+	url = https://github.com/cfklkj/namespacelibs.git
