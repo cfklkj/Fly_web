@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\include\Fly_web.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\__DECC_INCLUDE_EPILOGUE.H">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\__DECC_INCLUDE_PROLOGUE.H">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\aes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\asn1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\asn1_mac.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\asn1t.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\async.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\bio.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\blowfish.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\bn.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\camellia.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\cast.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\cmac.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\cms.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\comp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\conf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\conf_api.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\crypto.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\ct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\des.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\dh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\dsa.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\dtls1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\e_os2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\ebcdic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\ec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\ecdh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\ecdsa.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\engine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\err.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\evp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\hmac.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\idea.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\kdf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\lhash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\md2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\md4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\md5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\mdc2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\modes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\obj_mac.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\objects.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\ocsp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\opensslconf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\opensslv.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\ossl_typ.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\pem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\pem2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\pkcs7.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\pkcs12.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\rand.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\rc2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\rc4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\rc5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\ripemd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\rsa.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\safestack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\seed.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\sha.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\srp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\srtp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\ssl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\ssl2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\ssl3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\stack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\symhacks.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\tls1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\ts.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\txt_db.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\ui.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\whrlpool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\x509.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\x509_vfy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\third_sdk\include\openssl\x509v3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\cpp\Fly_web_html.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cpp\Fly_web_https.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cpp\Fly_web_iocp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cpp\Fly_web_raw.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cpp\Fly_web_set.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cpp\Fly_web_tcp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cpp\Fly_web_catch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cpp\Fly_web_system.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cpp\Fly_web.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

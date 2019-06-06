@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{7D4DA56D-F1DF-4A54-A1C3-41E5813D1B57}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Flyweb</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)namespacelibs\FlyLibs\src\include;$(SolutionDir)Fly_web\src\include;$(SolutionDir)third_sdk\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)namespacelibs\FlyLibs\src\include;$(SolutionDir)Fly_web\src\include;$(SolutionDir)third_sdk\include;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)libs\$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)Fly_web\src\include;$(SolutionDir)third_sdk\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)namespacelibs\FlyLibs\src\include;$(SolutionDir)Fly_web\src\include;$(SolutionDir)third_sdk\include;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)libs\$(Platform)\$(Configuration)\</OutDir>
+    <TargetName>$(ProjectName)R</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)third_sdk\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)third_sdk\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)third_sdk\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)third_sdk\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\include\Fly_web.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\aes.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\asn1.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\asn1t.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\asn1_mac.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\async.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\bio.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\blowfish.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\bn.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\buffer.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\camellia.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\cast.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\cmac.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\cms.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\comp.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\conf.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\conf_api.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\crypto.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\ct.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\des.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\dh.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\dsa.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\dtls1.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\ebcdic.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\ec.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\ecdh.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\ecdsa.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\engine.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\err.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\evp.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\e_os2.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\hmac.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\idea.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\kdf.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\lhash.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\md2.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\md4.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\md5.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\mdc2.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\modes.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\objects.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\obj_mac.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\ocsp.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\opensslconf.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\opensslv.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\ossl_typ.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\pem.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\pem2.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\pkcs12.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\pkcs7.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\rand.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\rc2.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\rc4.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\rc5.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\ripemd.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\rsa.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\safestack.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\seed.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\sha.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\srp.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\srtp.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\ssl.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\ssl2.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\ssl3.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\stack.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\symhacks.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\tls1.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\ts.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\txt_db.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\ui.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\whrlpool.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\x509.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\x509v3.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\x509_vfy.h" />
+    <ClInclude Include="src\third_sdk\include\openssl\__DECC_INCLUDE_EPILOGUE.H" />
+    <ClInclude Include="src\third_sdk\include\openssl\__DECC_INCLUDE_PROLOGUE.H" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\cpp\Fly_web_catch.cpp" />
+    <ClCompile Include="src\cpp\Fly_web_html.cpp" />
+    <ClCompile Include="src\cpp\Fly_web_https.cpp" />
+    <ClCompile Include="src\cpp\Fly_web_iocp.cpp" />
+    <ClCompile Include="src\cpp\Fly_web_raw.cpp" />
+    <ClCompile Include="src\cpp\Fly_web_set.cpp" />
+    <ClCompile Include="src\cpp\Fly_web_tcp.cpp" />
+    <ClCompile Include="src\cpp\Fly_web_system.cpp" />
+    <ClCompile Include="src\cpp\Fly_web.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\namespacelibs\FlyLibs\flyLibs.vcxproj">
+      <Project>{03fb3360-7b2a-4c1d-afeb-c5fcaf258e8e}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
