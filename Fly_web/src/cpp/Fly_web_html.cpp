@@ -1,12 +1,16 @@
 #include "Fly_web.h"
 #include "Fly_string.h"
 #include "Fly_debug.h"
+#include "Fly_file.h"
 
 #include <Windows.h>
 #include <wininet.h>
 #pragma   comment   (lib,   "wininet.lib")
 #pragma comment(lib, "Mpr")
 #pragma warning(disable:4996)
+
+#include <sstream> 
+#include <iostream>
   
 namespace Fly_web
 { 
@@ -127,6 +131,35 @@ namespace Fly_web
 			Fly_debug::Print("request---%s\r\n", req); 
 
 			return RAW::GetInfo(sockfd);  
-		}
+		} 
+
+		std::string PostInfo(std::string URLs, const char* sendData, int datalength)
+		{
+			RAW::IniSocket();
+			char mac[64] = { 0 };
+
+			auto IPPort = RAW::GetIpPortfromURL(URLs.c_str(), 80); //html  默认端口80
+			std::string IP = IPPort.ip;
+			int port = IPPort.port;
+			//connect
+			struct sockaddr_in serv_socket;
+			memset(&serv_socket, 0, sizeof(struct sockaddr_in));
+			serv_socket.sin_family = AF_INET;
+			serv_socket.sin_port = htons(port);
+			serv_socket.sin_addr.s_addr = inet_addr(IP.c_str()); //　设置IP地址  
+			SOCKET sockfd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+			int	flag = connect(sockfd, (struct sockaddr *)&serv_socket, sizeof(serv_socket)); //建立和HTTP服务器的TCP链接 
+			if (flag < 0) {
+				Fly_debug::Print("connect error!!! ip:%s\tport:%d\tflag = %d\n", IP.c_str(), port, flag);
+				closesocket(sockfd);
+				RAW::IniSocket();
+				return "";
+			}
+			Fly_debug::Print("connect OK %s\n", IP.c_str()); 
+			send(sockfd, sendData, datalength, 0);//write  
+			Fly_debug::Print("request---%s\r\n", sendData);
+
+			return RAW::GetInfo(sockfd);
+		} 
 	}
 }

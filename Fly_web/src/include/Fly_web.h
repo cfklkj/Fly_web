@@ -1,5 +1,6 @@
 #pragma once
 #include <string> 
+#include <vector>
 
 namespace Fly_web {
 	namespace RAW {
@@ -71,12 +72,15 @@ namespace Fly_web {
 		//网址请求
 		//body = "" 或 eg:id=12&ip=1234   --""  可判断 网址是否可用 ？
 		std::string URLRequest(const char * URL, const char * body,const char * fun_type = "POST", const char * accept_type = "html/text", const char * connection_type = "Close");
-		std::string URLRequestV2(const char* URL, const char* requestHead, const char* body);
+		std::string URLRequestV2(const char* URL, const char* requestHead, const char* body); 
 	}
 	namespace Https {
 		std::string Post(std::string URLs, std::string httpHead, std::string body);
 		std::string Post(std::string URLs, std::string body);
 	}
+	//post 文件
+	std::string PostFile(const char* Url, const char*  UploadName, const std::vector<std::string>& _FilePathList);
+
 	namespace IOCPs {
 		//注：---客户端使用 TCPs::lient  即可
 		namespace server {

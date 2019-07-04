@@ -6,17 +6,37 @@
 #include "Fly_web.h"
 #include "Fly_string.h"
 #include "Fly_file.h"
-#include <vector>
+#include <vector> 
 
 
 
 void help()
 {
-	const char* helps = "{-p=} {-o=} \
+	const char* helps = "{-p=} {-f=} {-o=} \
 eg:  -p urls httpHead body         is custom httphead to post info \n\
--p urls body      is simple to post info\
+-p urls body      is simple to post info\n\
+-f urls key path path paht ...  is push file\n\
 -o filePath  out print to file ";
 	printf(helps);
+}
+
+bool getPostFileValue(int argc, const char* argv[], std::vector<std::string>& rstPostValue)
+{
+	bool isFindPost = false;
+	for (int i = 1; i < argc; i++)
+	{
+		if (isFindPost)
+		{
+			if (argv[i][0] == '-')
+				break;
+			rstPostValue.push_back(argv[i]);
+		}
+		else
+		{
+			isFindPost = Fly_string::FindSub(argv[i], "-f");
+		}
+	}
+	return rstPostValue.size() > 2;
 }
 
 bool getPostValue(int argc,const char* argv[], std::vector<std::string>& rstPostValue)
@@ -59,27 +79,42 @@ bool getOutFilePath(int argc,const char* argv[], std::string & filePath)
 
 
 int main(int argc,const char* argv[])
-{  
+{   
 	std::vector<std::string> postValue;
+	std::string rst = "";
 	if (!getPostValue(argc, argv, postValue))
 	{
-		help();
-		return -1;
-	}
-	std::string rst = "";
-	if (postValue.size() == 1)
-	{
-		rst = Fly_web::Https::Post(postValue.at(0), "");
+		if (getPostFileValue(argc, argv, postValue))
+		{
+			std::vector<std::string> strlist;
+			for (int i = 2; i < postValue.size(); i++)
+			{
+				strlist.push_back(postValue[i]);;
+			}
+			rst = Fly_web::PostFile(postValue[0].c_str(), postValue[1].c_str(), strlist);
+		}
+		else
+		{
+			help();
+			return -1;
+		}
 	}
 	else
-	if (postValue.size() == 2)
 	{
-		rst = Fly_web::Https::Post(postValue.at(0), postValue.at(1));
-	}
-	else
-	if (postValue.size() == 3)
-	{
-		rst = Fly_web::Https::Post(argv[2], argv[3], argv[4]);
+		if (postValue.size() == 1)
+		{
+			rst = Fly_web::Https::Post(postValue.at(0), "");
+		}
+		else
+			if (postValue.size() == 2)
+			{
+				rst = Fly_web::Https::Post(postValue.at(0), postValue.at(1));
+			}
+			else
+				if (postValue.size() == 3)
+				{
+					rst = Fly_web::Https::Post(argv[2], argv[3], argv[4]);
+				}
 	}
 	std::string outPath = "";
 	if (getOutFilePath(argc, argv, outPath))

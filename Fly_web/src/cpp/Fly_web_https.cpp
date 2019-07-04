@@ -1,17 +1,20 @@
 /*
 2019-6-5
 参考：  https://blog.csdn.net/ZRXSLYG/article/details/81395640
+
+postfile  : https://www.cnblogs.com/chechen/p/10123293.html  ++
+			https://www.cnblogs.com/gongxijun/p/4777052.html
 */
 #include "Fly_web.h"
 #include "Fly_string.h"
- 
-#include <WINSOCK2.H> 
+#include "Fly_file.h"
+
 
 
 #include <openssl/ssl.h>
 
 #include <openssl/err.h>
-  
+
 #include <iostream>
 
 #include <sstream> 
@@ -24,8 +27,7 @@
 #endif
 #pragma comment(lib, ROOTPATH"\\libssl.lib")
 #pragma comment(lib, ROOTPATH"\\openssl.lib")
-
-#pragma comment(lib,"ws2_32.lib")
+ 
 #pragma warning(disable:4996)
 
 
@@ -38,8 +40,8 @@ namespace Fly_web
 {
 	namespace Https {
 
-		std::string PostOrGet(const char* sendData, std::string IP, int port)
-		{ 
+		std::string PostOrGet(const char* sendData, int datalength, std::string IP, int port)
+		{
 			if (!Fly_web::RAW::isLinkInternet())
 				return "link web error";
 
@@ -61,23 +63,21 @@ namespace Fly_web
 
 			SSL_CTX* ctx = SSL_CTX_new(meth);
 
-			if (ctx == NULL) 
-			{ 
+			if (ctx == NULL)
+			{
 
 				return "SSL_CTX_new error !";
 
 			}
 
-
-
 			SOCKET client = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
 			if (client == INVALID_SOCKET)
 
-			{ 
+			{
 				return "socket error !";
 
-			} 
+			}
 
 			struct sockaddr_in serv_socket;
 			memset(&serv_socket, 0, sizeof(struct sockaddr_in));
@@ -85,11 +85,11 @@ namespace Fly_web
 			serv_socket.sin_port = htons(port);
 			serv_socket.sin_addr.s_addr = inet_addr(IP.c_str()); //　设置IP地址  
 
-			if (connect(client, (sockaddr*)&serv_socket, sizeof(serv_socket)) == SOCKET_ERROR) 
-			{  
+			if (connect(client, (sockaddr*)&serv_socket, sizeof(serv_socket)) == SOCKET_ERROR)
+			{
 				return "connect error";
 
-			} 
+			}
 
 			//建立SSL 
 
@@ -99,7 +99,7 @@ namespace Fly_web
 
 			if (ssl == NULL)
 
-			{ 
+			{
 				closesocket(client);
 				return  "SSL NEW error";
 
@@ -113,13 +113,13 @@ namespace Fly_web
 
 			ret = SSL_connect(ssl);
 
-			if (ret == -1) 
-			{ 
+			if (ret == -1)
+			{
 				return  "SSL ACCEPT error ";
 
-			} 
+			}
 
-			ret = SSL_write(ssl, sendData, strlen(sendData));
+			ret = SSL_write(ssl, sendData, datalength);
 
 			if (ret == -1)
 			{
@@ -191,22 +191,21 @@ namespace Fly_web
 			stream << "\r\n";
 
 			stream << bodyToUtf8;
-			 
+
 			Fly_string::freeChar(bodyToUtf8);
 
 			string s = stream.str();
 
 			const char *sendData = s.c_str();
 
-			return PostOrGet(sendData, ipInfo.ip, ipInfo.port);
+			return PostOrGet(sendData, s.length(), ipInfo.ip, ipInfo.port);
 		}
 		std::string Post(std::string URLs, std::string httpHead, std::string body)
 		{
 			auto ipInfo = RAW::GetIpPortfromURL(URLs.c_str(), 443);  //https default port 443 
 			std::string sendData = httpHead + "\r\n" + body;
-			return PostOrGet(sendData.c_str(), ipInfo.ip, ipInfo.port);
-		}
-
+			return PostOrGet(sendData.c_str(), sendData.length(), ipInfo.ip, ipInfo.port);
+		} 
 	}
 }
 
