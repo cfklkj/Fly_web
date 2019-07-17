@@ -8,7 +8,7 @@
 #include "Fly_file.h"
 #include <vector> 
 
-
+#pragma comment(linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"")
 
 void help()
 {
